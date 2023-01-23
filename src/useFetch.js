@@ -9,8 +9,7 @@ const useFetch = function (url) {
     useEffect(() => {
         fetch(url)
             .then(res => {
-                console.log(res);
-                if (res.status !== 200) {
+                if (!res.ok) {
                     throw Error("could not fetch data for that resource");
                 }
 
